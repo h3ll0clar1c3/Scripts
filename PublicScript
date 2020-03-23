@@ -1,0 +1,4 @@
+#!/bin/bash
+nmap -sC -sV -Pn -v -p- -iL ./Public -oG PublicTCP.txt
+nmap -sU -v -iL ./Public -oG PublicUDP.txt
+done
