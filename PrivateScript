@@ -1,0 +1,4 @@
+#!/bin/bash
+nmap -sC -sV -Pn -v -p- -iL ./Private -oG PrivateTCP.txt
+nmap -sU -v -iL ./Private -oG PrivateUDP.txt
+done
