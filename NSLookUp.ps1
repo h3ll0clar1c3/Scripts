@@ -1,4 +1,4 @@
-$servers = get-content "C:\x\x\x\hostlist.txt"
+$servers = get-content "C:\temp\hostlist.txt"
 foreach ($Server in $Servers)
 {
     $Addresses = $null
