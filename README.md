@@ -6,5 +6,5 @@ Scripts
 * PrivateIP - Runs a Nmap scan on against a file of host servers with Private IP's to check both TCP and UDP ports.
 * PublicIP - Runs a Nmap scan on against a file of host servers with Public IP's to check both TCP and UDP ports.
 * RunAs.ps1 - Runs a 'RunAs' command to switch context of user whilst triggering and initiating a reverse shell to the attacker.
-* Meterpreter.rc - Sets a Meterpreter listener handler with options.
+* Meterpreter.rc - Sets a Meterpreter listener/handler with options.
 
