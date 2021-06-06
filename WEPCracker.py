@@ -10,7 +10,7 @@ for line in f:
     if len(wepKey) != 5 :
         continue
     hexKey = binascii.hexlify(wepKey)
-    print "Trying with WEP Key: " +wepKey + " Hex: " + hexKey
+    print "Trying with WEP key: " +wepKey + " Hex: " + hexKey
     p = Popen(['/usr/bin/airdecap-ng', '-w', hexKey, 'WEP-Advanced.cap'], stdout=PIPE)
     output = p.stdout.read()
     finalResult = output.split('\n')[4]
@@ -18,4 +18,4 @@ for line in f:
     if finalResult.find('1') != -1 :
         print "Success WEP Key Found: " + wepKey
         sys.exit(0)
-print "Failure! WEP Key Could not be Found with the existing dictionary!"
+print "Failure! WEP key could not be found with the existing dictionary!"
