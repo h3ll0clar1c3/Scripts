@@ -11,7 +11,7 @@ Scripts
 
 *WEP Python Cracker*
 
-`
+```
 #!/usr/bin/python
 import sys, binascii, re
 from subprocess import Popen, PIPE
@@ -29,5 +29,5 @@ if finalResult.find('1') != -1 :
 print "Success WEP Key Found: " + wepKey
 sys.exit(0)
 print "Failure! WEP Key Could not be Found with the existing dictionary!"
-`
+```
 
