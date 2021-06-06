@@ -1,5 +1,4 @@
 # Scripts
-Scripts
 
 * LocalAdmins.ps1 - Checks a file of host servers for members of the Administrators, Remote Desktop Users, and Users local groups.
 * NSLookUp.ps1 - Runs a NSLookUp query against a file of host servers.
