@@ -9,7 +9,7 @@
 * WEPCracker.py - Wrapper script to crack WEP using Airdecap-ng.
 
 
-### Local Admins
+### LocalAdmins.ps1
 
 ```
 $servers = Get-Content C:\servers.txt
@@ -31,7 +31,53 @@ $results = foreach ($server in $servers) {
 $results
 ```
 
-#### Meterpreter
+### NSLookUp.ps1
+
+```
+$servers = get-content "C:\temp\hostlist.txt"
+foreach ($Server in $Servers)
+{
+    $Addresses = $null
+    try {
+        $Addresses = [System.Net.Dns]::GetHostAddresses("$Server").IPAddressToString
+    }
+    catch { 
+        $Addresses = "Server IP cannot resolve."
+    }
+    foreach($Address in $addresses) {
+        write-host $Server, $Address 
+    }
+}
+```
+
+### Private IP
+
+```
+#!/bin/bash
+nmap -sC -sV -Pn -v -p- -iL ./Private -oG PrivateTCP.txt
+nmap -sU -v -iL ./Private -oG PrivateUDP.txt
+done
+```
+
+### Public IP
+
+```
+#!/bin/bash
+nmap -sC -sV -Pn -v -p- -iL ./Public -oG PublicTCP.txt
+nmap -sU -v -iL ./Public -oG PublicUDP.txt
+done
+```
+
+### RunAs.ps1
+
+```
+#!/bin/bash
+nmap -sC -sV -Pn -v -p- -iL ./Public -oG PublicTCP.txt
+nmap -sU -v -iL ./Public -oG PublicUDP.txt
+done
+```
+
+### Meterpreter.rc
 
 ```
 use exploit/multi/handler 
@@ -42,7 +88,7 @@ set ExitOnSession false
 exploit -j -z 
 ```
 
-### WEP Cracker
+### WEPCracker.py
 
 ```
 #!/usr/bin/python
