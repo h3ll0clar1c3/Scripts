@@ -9,7 +9,7 @@ Scripts
 * Meterpreter.rc - Sets a Meterpreter listener/handler with options (msfconsole -q -r Meterpreter.rc).
 
 
-*WEP Python Cracker*
+# WEP Python Cracker
 
 ```
 #!/usr/bin/python
