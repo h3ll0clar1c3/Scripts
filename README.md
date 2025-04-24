@@ -273,13 +273,13 @@ else:
 ```
 
 How to Use:<br/>
-1. Install the required libraries:
+1. Install the required libraries:<br/>
 ```
-bash
 pip install requests beautifulsoup4
 ```
-2. Replace the url variable with the website you want to scrape.
-3. Modify the soup.find_all logic to target the specific HTML elements on the page (e.g., div, span).
-4. Run the script, and the extracted data will be saved in output.json and output.csv.
+2. Replace the url variable with the website you want to scrape.<br/>
+3. Modify the soup.find_all logic to target the specific HTML elements on the page (e.g., div, span).<br/>
+4. Run the script, and the extracted data will be saved in output.json and output.csv.<br/>
 
+Here is a Python script for a simple web scraping utility. This script uses the requests library to fetch a webpage and the BeautifulSoup library to parse HTML content. It extracts data and saves it in a structured format like CSV or JSON.<br/>
 
