@@ -159,7 +159,7 @@ Write-Host "System Cleanup Completed!" -ForegroundColor Green
 ```
 
 How to Use:<br/>
-Save the script as SystemCleanup.ps1.<br/>
-Open PowerShell as an Administrator.<br/>
-Run the script using: .\SystemCleanup.ps1.<br/>
+1. Save the script as SystemCleanup.ps1.<br/>
+2. Open PowerShell as an Administrator.<br/>
+3. Run the script using: .\SystemCleanup.ps1.<br/>
 This script cleans up temporary files older than 7 days, log files older than 30 days, and clears the Recycle Bin. You can customize the paths and retention periods as needed. Let me know if you need further assistance!
