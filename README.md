@@ -9,6 +9,7 @@
 * WEPCracker.py - Wrapper script to crack WEP using Airdecap-ng.
 * SystemCleanUp.ps1 - This script cleans up temporary files older than 7 days, log files older than 30 days, and clears the Recycle Bin.
 * BackupAutomation.py - This script automates the process of backing up files and directories to a specified location.
+* WebScrapingUtility.py - Script for a simple web scraping utility. This script uses the requests library to fetch a webpage and the BeautifulSoup library to parse HTML content. It extracts data and saves it in a structured format like CSV or JSON.
 
 
 ### LocalAdmins.ps1
@@ -225,7 +226,60 @@ How to Use:<br/>
 3. Replace /path/to/backup with the directory where you want the backups to be stored.<br/>
 4. Run the script using: python BackupAutomation.py.<br/>
 
-Features:
-* Timestamped Backups: Creates backups with a unique timestamp in the name.
-* Retention Policy: Automatically deletes backups older than the specified number of days.
-* Error Handling: Includes basic error handling for common issues.
+### WebScrapingUtility.py
+
+```
+import requests
+from bs4 import BeautifulSoup
+import csv
+import json
+
+# URL of the website to scrape
+url = "https://example.com"  # Replace with the target URL
+
+# Headers to mimic a browser visit
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
+
+# Send a GET request to the website
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, "html.parser")
+    
+    # Example: Extract data (e.g., titles and links)
+    data = []
+    for item in soup.find_all("a"):  # Replace "a" with the target HTML element
+        title = item.text.strip()  # Extract text
+        link = item.get("href")    # Extract link
+        if title and link:
+            data.append({"title": title, "link": link})
+
+    # Save data to a JSON file
+    with open("output.json", "w", encoding="utf-8") as json_file:
+        json.dump(data, json_file, ensure_ascii=False, indent=4)
+    
+    # Save data to a CSV file
+    with open("output.csv", "w", newline="", encoding="utf-8") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=["title", "link"])
+        writer.writeheader()
+        writer.writerows(data)
+
+    print("Data has been saved to 'output.json' and 'output.csv'")
+else:
+    print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+```
+
+How to Use:<br/>
+1. Install the required libraries:
+```
+bash
+pip install requests beautifulsoup4
+```
+2. Replace the url variable with the website you want to scrape.
+3. Modify the soup.find_all logic to target the specific HTML elements on the page (e.g., div, span).
+4. Run the script, and the extracted data will be saved in output.json and output.csv.
+
+
