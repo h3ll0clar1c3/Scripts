@@ -8,6 +8,7 @@
 * Meterpreter.rc - Sets a Meterpreter listener/handler with options (msfconsole -q -r Meterpreter.rc).
 * WEPCracker.py - Wrapper script to crack WEP using Airdecap-ng.
 * SystemCleanUp.ps1 - This script cleans up temporary files older than 7 days, log files older than 30 days, and clears the Recycle Bin.
+* BackupAutomation.py - This script automates the process of backing up files and directories to a specified location.
 
 
 ### LocalAdmins.ps1
