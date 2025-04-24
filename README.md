@@ -7,6 +7,7 @@
 * RunAs.ps1 - Runs a 'RunAs' command to switch context of user whilst triggering and initiating a reverse shell to the attacker.
 * Meterpreter.rc - Sets a Meterpreter listener/handler with options (msfconsole -q -r Meterpreter.rc).
 * WEPCracker.py - Wrapper script to crack WEP using Airdecap-ng.
+* SystemCleanUp.ps1 - This script cleans up temporary files older than 7 days, log files older than 30 days, and clears the Recycle Bin.
 
 
 ### LocalAdmins.ps1
